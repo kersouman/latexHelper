@@ -1,16 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void createFolder(char* folderName)
-{
-	char *commandBuffer = (char*) malloc(262*sizeof(char));
-	
-	sprintf(commandBuffer, "mkdir %s", folderName);
-	system(commandBuffer);
-
-	free(commandBuffer);
-}
-
 void createProject()
 {
 	char *folderName = (char*) malloc(256*sizeof(char));
@@ -23,6 +13,16 @@ void createProject()
 	createFolder(folderName);
 
 	free(folderName);
+}
+
+void createFolder(char* folderName)
+{
+	char *commandBuffer = (char*) malloc(262*sizeof(char));
+	
+	sprintf(commandBuffer, "mkdir %s", folderName);
+	system(commandBuffer);
+
+	free(commandBuffer);
 }
 
 void createFile()
